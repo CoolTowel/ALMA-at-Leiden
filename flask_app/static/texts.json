@@ -1,0 +1,271 @@
+{
+  "1_Oude_Sterrenwacht": {
+    "checkin_question": " There is a clock in front of the entrance. What does the text say below this clock?",
+    "checkin_options": [
+      "Wintertijd",
+      "Zomertijd",
+      "Ruimtetijd",
+      "Tijd"
+    ],
+    "post_check": "This is the Old Observatory in Leiden, the former site of all astronomy-related research performed in Leiden – and the start of your adventure!",
+    "checkin_answer": "Zomertijd",
+    "astro_question": "What surface area does the ALMA cover?",
+    "astro_options": [
+      "1 square km",
+      "5 square km",
+      "20 square km",
+      "100 square km"
+    ],
+    "astro_answer": "20 square km"
+  },
+  "2_Doelenpoort": {
+    "checkin_question": "How many barrels can you find on the gate?",
+    "checkin_options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "checkin_answer": "4",
+    "post_check": "A gate from 1645, dedicated to the soldiers of Leiden. The sun is depicted multiple times on this gate. How many suns can you find?",
+    "astro_question": "How many telescopes does the ALMA have?",
+    "astro_options": [
+      "8",
+      "24",
+      "42",
+      "66"
+    ],
+    "astro_answer": "66"
+  },
+  "3_Sieboldhuis": {
+    "checkin_question": "What shape does the window above the door have?",
+    "checkin_options": [
+      "Square",
+      "Round",
+      "Triangle",
+      "Star"
+    ],
+    "checkin_answer": "Round",
+    "post_check": "This is a museum about Japan-related research in Leiden. Japanese astronomers also make use of ALMA: a true international collaboration!",
+    "astro_question": "(to be determined)",
+    "astro_options": [
+      "answers"
+    ],
+    "astro_answer": "answers"
+  },
+  "4_Molen_de_Put": {
+    "checkin_question": "From what year is the original windmill?",
+    "checkin_options": [
+      "1612",
+      "1617",
+      "1619",
+      "1624"
+    ],
+    "checkin_answer": "1619",
+    "post_check": "This is one of two windmills you will encounter on your adventure. Their blades remind us of the round telescope dishes at ALMA.",
+    "astro_question": "How large is one ALMA telescope dish compared to the blades of this mill?",
+    "astro_options": [
+      "0.5 times as large",
+      "Equal in size",
+      "Twice as large",
+      "Ten times as large"
+    ],
+    "astro_answer": "0.5 times as large"
+  },
+  "5_Museum_Volkenkunde": {
+    "checkin_question": "What name does the café across from Museum Volkenkunde have?",
+    "checkin_options": [
+      "Stadscafé Van der Werff",
+      "Studio de Veste",
+      "De Bruine Boon",
+      "Restaurant De Valk"
+    ],
+    "checkin_answer": "Stadscafé Van der Werff",
+    "post_check": "Step into the courtyard of this large museum to get a taste of what they offer.",
+    "astro_question": "Find the optimal interferometry settings in this website.",
+    "astro_options": [
+      "Found it!"
+    ],
+    "astro_answer": "Found it!"
+  },
+  "6_Molen_de_Valk": {
+    "checkin_question": "What year was the windmill built?",
+    "checkin_options": [
+      "1743",
+      "1746",
+      "1750",
+      "1755"
+    ],
+    "checkin_answer": "1743",
+    "post_check": "This windmill is larger than the previous one you saw. Just like these windmills, not all telescopes at ALMA are equal in size and diameter.",
+    "astro_question": "Which of the following is not a type of star?",
+    "astro_options": [
+      "Brown Dwarf",
+      "Hypergiant",
+      "Neutron Star",
+      "White Dwarf"
+    ],
+    "astro_answer": "Brown Dwarf"
+  },
+  "7_Museum_de_Lakenhal": {
+    "checkin_question": "Above the entrance gate is a small statue of what?",
+    "checkin_options": [
+      "Gargoyle",
+      "Telescope",
+      "Lion",
+      "Windmill"
+    ],
+    "checkin_answer": "Windmill",
+    "post_check": "If the door is open, we recommend you step into the pretty courtyard and take a look!",
+    "astro_question": "At the end of its lifetime, the sun will become a red giant. How large will its diameter be, compared to its current size?",
+    "astro_options": [
+      "5x",
+      "200x",
+      "10000x",
+      "1000000x"
+    ],
+    "astro_answer": "200x"
+  },
+  "8_Leidse_schouwburg": {
+    "checkin_question": "How many lamps can you find hanging on the side the building?",
+    "checkin_options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "checkin_answer": "4",
+    "post_check": "You're halfway there now!",
+    "astro_question": "This picture was made with ALMA. What is this image of?",
+    "astro_options": [
+      "Jupiter",
+      "Neptune",
+      "The sun",
+      "Another star"
+    ],
+    "astro_answer": "Jupiter"
+  },
+  "9_Rijksmuseum_Boerhaave": {
+    "checkin_question": "Beside the museum, a formula is painted on the wall. What is the leftmost letter of the formula?",
+    "checkin_options": [
+      "R",
+      "G",
+      "F",
+      "A"
+    ],
+    "checkin_answer": "R",
+    "post_check": "This equation is Einstein's field equation: it describes how objects distort the space around them. This physics equation has proved to be very important in astronomy.Next to the equation, you will find Museum Boerhaave. This museum displays a large collection of scientific objects, including a significant collection of astronomy-related objects. It's definitely worth a visit on a rainy day!",
+    "astro_question": "Galileo Galilei was a famous astronomer. Which of the following discoveries did he make?",
+    "astro_options": [
+      "He invented the telescope.",
+      "He discovered that the earth orbited the sun, and not the other way around.",
+      "He saw that Jupiter had four moons of its own.",
+      "He proclaimed the existence of the planet Neptune."
+    ],
+    "astro_answer": "He saw that Jupiter had four moons of its own."
+  },
+  "10_Burcht": {
+    "checkin_question": ": How many stars can you, at most, find on a single shield?",
+    "checkin_options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "checkin_answer": "3",
+    "post_check": "Situated on a hill, the Burcht is the highest point of Leiden - though not as high up as ALMA...",
+    "astro_question": "Why is ALMA located at the Atacama Desert at 5000 meters altitude?",
+    "astro_options": [
+      "In the mountains, the air is thinner clearer, so you have a better view of the stars.",
+      "The Atacama Desert is very dry, with very little water vapor in the air.",
+      "The nearest city is very far away, so there are no unwanted visitors.",
+      "There is no snow in the desert, which would distort astronomical measurements."
+    ],
+    "astro_answer": "The Atacama Desert is very dry, with very little water vapor in the air."
+  },
+  "11_Hooglandse_Kerk": {
+    "checkin_question": "When was the original wooden chapel built on this location?",
+    "checkin_options": [
+      "1300",
+      "1307",
+      "1314",
+      "1321"
+    ],
+    "checkin_answer": "1314",
+    "post_check": "One of Leiden's largest and oldest churches.",
+    "astro_question": "Play with constellations",
+    "astro_options": [
+      "Done!"
+    ],
+    "astro_answer": "Done!"
+  },
+  "12_Plaatsteeg_20": {
+    "checkin_question": "On this tower, you will find a formula. Whose formula is this? ",
+    "checkin_options": [
+      "Albert Einstein",
+      "Christiaan Huygens",
+      "Herman Boerhaave",
+      "Galileo Galilei"
+    ],
+    "checkin_answer": "Christiaan Huygens",
+    "post_check": "",
+    "astro_question": "How many galaxies are estimated to be in the observable universe?",
+    "astro_options": [
+      "2 billion",
+      "20 billion",
+      "2 trillion",
+      "200 trillion"
+    ],
+    "astro_answer": "2 trillion"
+  },
+  "13_Pieterskerkhof_40": {
+    "checkin_question": "At this address, you will find an old house. How many heads are on the façade?",
+    "checkin_options": [
+      "0",
+      "1",
+      "2",
+      "6"
+    ],
+    "checkin_answer": "6",
+    "post_check": "This house is where the Leiden mathematician Snellius was born. He also wrote two works on astronomy. ",
+    "astro_question": "This is a photograph of a galaxy. What was the image of ALMA?",
+    "astro_options": [
+      "A",
+      "B",
+      "C"
+    ],
+    "astro_answer": "B"
+  },
+  "14_Kamerlingh_Onnes_Gebouw": {
+    "checkin_question": "What quote from Heike Kamerlingh Onnes can you find outside the entrance?",
+    "checkin_options": [
+      "Door meten tot weten",
+      "Met meten tot weten",
+      "Meten en weten",
+      "Door meten naar weten"
+    ],
+    "checkin_answer": "Door meten tot weten",
+    "post_check": " In this building, Heike Kamerlingh Onnes first created liquid helium. The telescopes at ALMA actually need liquid helium to work!",
+    "astro_question": "follow the mysterious animal tracks",
+    "astro_options": [
+      "Done!"
+    ],
+    "astro_answer": "Done!"
+  },
+  "15_Koepoortsbrug": {
+    "checkin_question": "How many bridges lie between here and the Old Observatory?",
+    "checkin_options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "checkin_answer": "1",
+    "post_check": "Nearly there!",
+    "astro_question": "(to be determined)",
+    "astro_options": [
+      "answers"
+    ],
+    "astro_answer": "answers"
+  }
+}

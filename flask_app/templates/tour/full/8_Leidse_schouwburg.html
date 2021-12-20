@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>8. Leidse schouwburg</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>&lsquo;&hellip;actually, it&rsquo;s probably not a red giant&rsquo;, Jeremy concludes after a lengthy monologue.</p>
+    <p>&lsquo;Then what is it?&rsquo; Robin asks.</p>
+    <p>&lsquo;It's probably too early to tell. Here at ALMA, we look at all kinds of astronomical objects. Not just stars, but also planets, galaxies, even black holes...&rsquo;</p>
+    <p>&lsquo;So a planet, maybe?&rsquo;</p>
+    <p>&lsquo;Not likely! At ALMA, we have made some wonderful images of planets in the past. But we can see them with our naked eye, although they are tiny in the night sky. Your object, like many of the objects we observe at ALMA, is invisible to us. They are too far away, and some don't emit any light, only radio waves. Thanks to these radio telescopes, we can make these invisible objects visible.&rsquo;</p>
+    <p>He shows the book to Robin. &lsquo;Look at all these amazing images. Without ALMA, we would never have seen any of this!&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = 'images/8_question_image.png') }}" alt="Question image">
+      </div>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>This is an image of Jupiter: do you recognize the striped pattern? ALMA also takes pictures of the planets in our solar system, registering radio waves instead of visible light</p>
+      <p><b>Fun fact: </b>Not only ALMA, which receives radio waves, but also many telescopes receiving the infrared band can see things that are normally invisible. For example, stars that are obscured by thick dust in the universe emit infrared light that can penetrate that dust and be observed by infrared telescopes.</p>
+      <p>The next location is the Museum Boerhaave (Lange Sint Agnietenstraat 10).</p>
+      <a href="/tour/full/9_Rijksmuseum_Boerhaave" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/7_Museum_de_Lakenhal" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b>{{astro_question}}
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = 'images/8_question_image.png') }}" alt="Question image">
+      </div>
+      <p>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

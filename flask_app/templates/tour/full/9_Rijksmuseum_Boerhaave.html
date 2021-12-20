@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>9. Rijksmuseum Boerhaave</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>'Of course, it wasn't always like this,&rsquo; Jeremy continues as they walk to the next telescope. &lsquo;Long ago, we only had normal, optical telescopes. And before that, we only had our own eyes! For a long time, we thought the earth was the centre of the universe, and that the sun orbited us. Then scientists found out it was the other way around, that we orbited the sun. Then they discovered that the universe is so much bigger than we previously imagined. Our curiosity led us to great discoveries: billions upon billions of stars, each unique in their own way, some like the sun, some weird and wacky, some with planets...&rsquo; He talked for minutes on end, and Robin could do nothing other than nod.</p>
+    <p>Erica whispers with a smile: &lsquo;He tends to ramble a lot. You can disagree with him if you want.&rsquo;</p>
+    <p>&lsquo;I think he's right, though', Robin says. &lsquo;The universe&nbsp;<em>is&nbsp;</em>incredible.&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>Many people believe Galileo invented the telescope and discovered the earth orbited the sun. Both these discoveries were actually made before him, while the planet Neptune was only discovered much later. </p>
+      <p>The next location is the Burcht (Van der Sterrepad 5).</p>
+      <a href="/tour/full/10_Burcht" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/8_Leidse_schouwburg" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b>{{astro_question}}<p>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

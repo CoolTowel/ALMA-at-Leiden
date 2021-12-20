@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>11. Hooglandse Kerk</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>Jeremy returns to the main building while they rest beneath the telescope. By now, night has fallen. The night sky is full of stars, much brighter than Robin is used to. As a child, he had learned about the constellations in the sky, and he tries looking for them. But he noticed something is off.</p>
+    <p>&lsquo;The constellations are different here.&rsquo;</p>
+    <p>&lsquo;That's right.&rsquo;</p>
+    <p>&lsquo;It feels strange. I always felt comfort in seeing those familiar shapes...&rsquo;</p>
+    <p>&lsquo;Most people do. Constellations have always been a large part of human culture. But they're different in all parts of the earth. There are some you can see both in Chile and The Netherlands, such as Orion.&rsquo;</p>
+    <p>&lsquo;Do the constellations here have names as well?&rsquo;</p>
+    <p>She points. &lsquo;Do you see those four stars? That's called the Cross...&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Puzzle: </b></font>{{astro_question}}</p>
+      <p><b>Explanation: </b>(To be determined)</p>
+      <p><b>Fun fact: </b>Constellations in the northern hemisphere are often named after Greek mythological figures, while many constellations in the Southern Celestial Hemisphere are named after scientific instruments or tools, such as Telescopium and Microscopium.</p>
+      <p>The next location is Plaatsteeg 20.</p>
+      <a href="/tour/full/12_Plaatsteeg_20" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/10_Burcht" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Puzzle: </b>{{astro_question}}<p>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

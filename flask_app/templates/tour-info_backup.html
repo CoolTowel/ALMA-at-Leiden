@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <p>Student X has seen an unknown object on the night sky through his optical telescope. He looked through all the databases to see if he really discovered something new. But no! There is nothing to find. Together they connect scientist X, an employee of astronomy organization ALMA. Scientist X is very enthusiastic. He immediately invites them to come to Chile to work on the finding together.</p>
+
+    <p>There are four routes for you to choose from:
+    <div class="btn-group">
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select your route...
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="/tour/full/1_Oude_Sterrenwacht">Full tour</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/tour/shorter1/start">Shorter 1</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/tour/shorter2/start">Shorter 2</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/tour/shorter3/start">Shorter 3</a>
+    </div>
+    </div>
+
+{% endblock content %}

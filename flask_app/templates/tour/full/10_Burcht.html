@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>10. Burcht</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>Robin panted. They had only been walking for an hour, but he feels out of breath already, as if he'd ran a marathon. As they reach the next antenna, he stops and sits down.</p>
+    <p>&lsquo;Are you all right?&rsquo; Erica asks, concerned.</p>
+    <p>&lsquo;Yes, it's just... quite tiring,&rsquo; Robin says.</p>
+    <p>Erica sits down next to him. &lsquo;The air is thin up here. We're at 5000 metres altitude, so there's much less oxygen here. If you're not acclimatized, you run out of breath very quickly. Even I have trouble with it sometimes.&rsquo;</p>
+    <p>&lsquo;Why is ALMA here, anyway?&rsquo;</p>
+    <p>&lsquo;You see...&rsquo; Robin hears little of Erica's explanation. He sees something dart behind the radio telescope. It's the second time already; it can't be a coincidence. Is it the lack of oxygen, or is something going on here?</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b> Millimetre and submillimetre radio signals from space are heavily absorbed by water vapour in the Earth's atmosphere. The less the vapor the more signals we receive.</p>
+      <p><b>Fun fact: </b>The Earth's atmosphere absorbs many parts of the electromagnetic spectrum. The reason we spend a lot of money launching telescopes into space is that the infrared, ultraviolet, and X-rays emitted by celestial bodies are only received outside the atmosphere.</p>
+      <p>The next location is the Hooglandse Kerk (Nieuwstraat 20).</p>
+      <a href="/tour/full/11_Hooglandse_Kerk" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/9_Rijksmuseum_Boerhaave" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b>{{astro_question}}<p>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

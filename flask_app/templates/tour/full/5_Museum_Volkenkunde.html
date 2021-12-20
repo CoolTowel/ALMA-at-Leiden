@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>5. Museum Volkenkunde</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>What was that? Something moved very quickly in the corner of his eye. Robin looks at the telescope; but whatever he saw, it&rsquo;s gone now.&nbsp;</p>
+    <p>&lsquo;Still here, Robin?&rsquo;</p>
+    <p>He snaps awake. &lsquo;Yes, Professor.&rsquo;</p>
+    <p>&lsquo;Good. Now you should understand the basics of interferometry. Unfortunately, we don&rsquo;t have time to turn on all of the telescopes and look at your strange object. After all, it&rsquo;s already getting dark. But I&rsquo;d say that fifteen antennae should suffice.&rsquo;</p>
+    <p>&lsquo;Just fifteen?&rsquo;</p>
+    <p>&lsquo;Just fifteen. And you can help by providing their optimal placement. Shall we take a break while you figure that out?&rsquo;</p>
+    <p>&lsquo;Of course.&rsquo; His mind was still with that strange moving thing.</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Puzzle: </b></font>{{astro_question}}</p>
+      <p><b>Explanation: </b>(to be determined)</p>
+      <p>The next location is Molen de Valk (2e Binnenvestgracht 1).</p>
+      <a href="/tour/full/6_Molen_de_Valk" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/4_Molen_de_Put" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Puzzle: </b>{{astro_question}}<p>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{# <div class="container"> #}
+  <h3> Your collected antennas</h3>
+
+  <div>
+  <ul class="list-group">
+  {# <iframe src="https://www.google.com/maps/d/embed?mid=1HVrJib4TFER3fcx4hiWZ11gtq4OTdL4R&ehbc=2E312F" width="300" height="480"></iframe> #}
+  {% for antenna in antennas %}
+    <li class="list-group-item">{{antenna.name}}</li>
+  {% endfor %}
+  </ul>
+  </div>
+
+{# </div> #}
+
+{% endblock content %}

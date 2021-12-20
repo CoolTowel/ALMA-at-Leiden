@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>13. Pieterskerkhof 40</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>At the next antenna, a man sits beside the giant dish, with paper and pencil in hand. He stands up and greets the two as they arrived.</p>
+    <p>Erica introduces him to Robin: &lsquo;This is Pascal&nbsp;Le Mans, our artist.&rsquo;</p>
+    <p>&lsquo;An artist?&rsquo;</p>
+    <p>&lsquo;Yes!&rsquo; Pascal responds. &lsquo;I make the art for all the discoveries made at ALMA. Many of those beautiful astronomy images you see in the newspaper and on the internet... well, they're not&nbsp;<em>real&nbsp;</em>pictures.&rsquo;</p>
+    <p>&lsquo;Really?&rsquo;</p>
+    <p>&lsquo;No! Often, those are artist's impressions. Thanks to telescopes such as ALMA, we can find all kinds of far-off space objects. Stars, galaxies, exoplanets, all in deep space. But ALMA can't always tell us what they look like.&rsquo;</p>
+    <p>Robin turns to Erica. &lsquo;I don't understand. I thought you said ALMA created images?&rsquo;</p>
+    <p>&lsquo;Oh, they do,&rsquo; Pascal says. &lsquo;Just not the beautiful, colourful, striking kind. That's my job.&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = 'images/13_question_image.jpg') }}" alt="Question image">
+      </div>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>ALMA registers radio waves instead of visible light. The images from ALMA may not look like other astronomy images, but they offer valuable insights into stars, galaxies and black holes.</p>
+      <p>The next location is the Kamerlingh Onnes building (Steenschuur 25).</p>
+      <a href="/tour/full/14_Kamerlingh_Onnes_Gebouw" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/12_Plaatsteeg_20" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b>{{astro_question}}<p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = 'images/13_question_image.jpg') }}" alt="Question image">
+      </div>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

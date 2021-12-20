@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>12. Plaatsteeg 20</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>Once they are well rested, they continue their walk. By now, Erica sees on her tablet, the image is starting to take shape.&nbsp;</p>
+    <p>&lsquo;This could be the image of an unknown galaxy,&rsquo; Erica notes.</p>
+    <p>&lsquo;It does have that shape,&rsquo; Robin agrees. &lsquo;But otherwise, it just looks... a bit different.&rsquo;</p>
+    <p>&lsquo;Oh, that's no surprise. The universe is huge. See the stars in the night sky? Those are only a tiny fraction of what we can actually see. There are so, so many things in the universe and a lot of them have not been studied yet. We could give every person on the planet twenty galaxies of their own, and there would still be galaxies to spare.&rsquo;</p>
+    <p>She pauses. 'And between all those stars and galaxies, there may be some things we... weren't expecting to see.&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>Although we don't know the amount for sure, we estimate that there are between 200 billion and 2 trillion galaxies in the observable universe. That's an incredible amount!</p>
+      <p>The next location is the Pieterskerk (Pieterskerkhof 40).</p>
+      <a href="/tour/full/13_Pieterskerkhof_40" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/11_Hooglandse_Kerk" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b>{{astro_question}}<p>
+        <div class="form-group">
+          <label for="{{astro_question}}"></label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

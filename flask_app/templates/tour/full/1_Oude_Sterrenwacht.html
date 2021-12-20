@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>First destination: Oude Sterrenwacht</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>Robin de Vries couldn&rsquo;t believe his luck. After six months of waiting, he was finally able to visit the ALMA Observatory in Chile! He could finally use the fancy radio telescopes to study a strange object he'd found in deep space.</p>
+    <p>However, on arrival, professor Erica Gomez seemed very concerned. &lsquo;The electricity has cut out and the telescopes aren&rsquo;t working,&rsquo; she said. &lsquo;We&rsquo;ll have to turn them on first before we can start measuring.&rsquo; Robin froze: there were so many telescopes, and they were so far apart.
+    </p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>The ALMA observatory covers a whopping 20 square km. For comparison, the municipality of Leiden covers 23.27 square km.</p>
+      <p>The next location is the Doelenpoort (Groenhazengracht).</p>
+      <a href="/tour/full/2_Doelenpoort" class="btn btn-success">Next checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text">The first image you get from the antenna at Oude Sterrenwacht!</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b><p>
+        <div class="form-group">
+          <label for="{{astro_question}}">{{astro_question}}</label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>2. Doelenpoort</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>&lsquo;Can&rsquo;t we just use one telescope?&rsquo; Robin asks.</p>
+    <p>&lsquo;Unfortunately not,&rsquo; Erica responds, &lsquo;each telescope has an antenna that registers radio waves from space &ndash; unlike the visible light you see with a normal telescope and your eyes. But one antenna isn&rsquo;t enough to understand what we&rsquo;re looking at. Our telescopes make use of&nbsp;<em>interferometry</em>: all the telescopes register these waves, and we combine the signals to create an image.</p>
+    <p>&lsquo;So do we have to turn them all on?&rsquo;</p>
+    <p>&lsquo;Not all of them, luckily; but the more, the better.&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>ALMA has 66 radio telescopes. More telescopes allow for better imaging; but they also cost more to build and operate.</p>
+      <p>The next location is the Sieboldhuis (Rapenburg 19).</p>
+      <a href="/tour/full/3_Sieboldhuis" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/1_Oude_Sterrenwacht" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b><p>
+        <div class="form-group">
+          <label for="{{astro_question}}">{{astro_question}}</label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

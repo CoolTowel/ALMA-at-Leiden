@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>6. Molen de Valk</h3>
+
+  {% if checkin_status %}
+    <p><i> {{post_check}} </i></p>
+    <p>&lsquo;We can already see the first results coming in,&rsquo; Erica says. She shows the screen of her tablet to Robin.</p>
+    <p>&lsquo;It's sharper than before. But I don&rsquo;t see much. It's still a bit blurry&hellip;&rsquo;</p>
+    <p>&lsquo;Not yet. But at least we&rsquo;ve narrowed down our possibilities. I think this might be a star, or a galaxy, or maybe a black hole&hellip;&rsquo;</p>
+    <p>&lsquo;How do you know? I can&rsquo;t see anything here.&rsquo;</p>
+    <p>&lsquo;It's just a guess, really. But I know someone who could help us.&rsquo; Erica takes out her phone. &lsquo;Hey, Jeremy? Would you mind coming out to Telescope no. 6? We need your help.&rsquo;</p>
+
+    {%if picture_usable %}
+      <p><font color="blue"><b>Question: </b></font>{{astro_question}}</p>
+      <p><font color="green"><b>Answer: </b></font>{{astro_answer}}</p>
+      <p><b>Explanation: </b>Brown dwarfs are strange objects: they don&rsquo;t orbit another star, but are too small themselves to be considered stars. Hypergiants, neutron stars and white dwarfs are all stars. Nevertheless, these three are very different from one another!</p>
+      <p><b>Fun fact: </b>most brown dwarfs are only slightly larger than Jupiter in size (15-20%) but are still up to 80 times heavier because of their greater density.</p>
+      <p>The next location is Museum de Lakenhal (Oude Singel 32).</p>
+      <a href="/tour/full/7_Museum_de_Lakenhal" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/5_Museum_Volkenkunde" class="btn btn-secondary">Last checkpoint</a>
+      <p></p>
+      <div class="card mx-auto" style="width: 17rem;">
+        <img class="card-img-top" src="{{ url_for('static', filename = path) }}" alt="Oberved image">
+        <div class="card-body">
+          {# <h5 class="card-title">Oberved image </h5> #}
+          <p class="card-text"><b>The oberved image with available antennas for now.</b> Activate more antennas to get more clear image.</p>
+        </div>
+      </div>
+
+    {% else %}
+      <form action="{{this_page}}" method="POST">
+      <p><font color="blue"><b>Question: </b><p>
+        <div class="form-group">
+          <label for="{{astro_question}}">{{astro_question}}</label>
+          <select class="form-control" name="{{astro_question}}">
+            {% for astro_option in astro_options %}
+            <option value = "{{astro_option}}" >{{astro_option}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    {% endif %}
+
+  {% else %}
+    <form action="{{this_page}}" method="POST">
+      <div class="form-group">
+        <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
+        <select class="form-control" name="{{checkin_question}}">
+          {% for checkin_option in checkin_options %}
+          <option value = "{{checkin_option}}" >{{checkin_option}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Check in!</button>
+    </form>
+  {% endif %}
+
+{% endblock content %}

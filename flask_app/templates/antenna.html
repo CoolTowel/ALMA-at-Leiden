@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <form action="/antenna" method="POST">
+
+    <div class="form-group ">
+      <label for="antenna_id">Antenna ID</label>
+      <input class="form-control form-control-lg" id="antenna_id" name="antenna_id" placeholder="Enter antenna ID">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+  <p calss="fiverem-verticl-margin"></p>
+
+  <a href="/antenna-list" class="btn btn-success">Check collected antennas</a>
+
+{% endblock content %}
