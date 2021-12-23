@@ -11,11 +11,13 @@
     <p>&lsquo;It feels strange. I always felt comfort in seeing those familiar shapes...&rsquo;</p>
     <p>&lsquo;Most people do. Constellations have always been a large part of human culture. But they're different in all parts of the earth. There are some you can see both in Chile and The Netherlands, such as Orion.&rsquo;</p>
     <p>&lsquo;Do the constellations here have names as well?&rsquo;</p>
-    <p>She points. &lsquo;Do you see those four stars? That's called the Cross...&rsquo;</p>
+    <p>She points. &lsquo;Do you see those four stars? That's called the Cross(Crux)...&rsquo;</p>
+    <img src="{{ url_for('static', filename='images/drawing/11_Hooglandse_Kerk.png') }}" class="img-fluid" alt="The alma antennas in leien"><p></p>
+    
 
     {%if picture_usable %}
       <p><font color="blue"><b>Puzzle: </b></font>{{astro_question}}</p>
-      <p><b>Explanation: </b>(To be determined)</p>
+      <p><b>Answer: </b><br/>A-6,    B-1,    C-3,<br/>    D-5,   E-2,    F-4,</p>
       <p><b>Fun fact: </b>Constellations in the northern hemisphere are often named after Greek mythological figures, while many constellations in the Southern Celestial Hemisphere are named after scientific instruments or tools, such as Telescopium and Microscopium.</p>
       <p>The next location is Plaatsteeg 20.</p>
       <a href="/tour/full/12_Plaatsteeg_20" class="btn btn-success">Next checkpoint</a>  <a href="/tour/full/10_Burcht" class="btn btn-secondary">Last checkpoint</a>
@@ -44,6 +46,7 @@
     {% endif %}
 
   {% else %}
+  <iframe src="https://www.komoot.com/tour/607161078/embed?share_token=aUPTiKao85tbUsb9jXn9liHSQShThAnQnJkEQleOTQnqb1UxBx" width="100%" height="580" frameborder="0" scrolling="no"></iframe> 
     <form action="{{this_page}}" method="POST">
       <div class="form-group">
         <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>

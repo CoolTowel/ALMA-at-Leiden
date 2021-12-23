@@ -157,32 +157,7 @@ def tour_full(antenna_input):
                 flash("Wrong!", "danger")
                 return redirect(this_page)
 
-
-# @app.route("/tour/full/4718")
-# @login_required
-# def tour_full_4718():
-#     return render_template("/tour/full/4718.html")
-
-# @app.route("/tour-full/4718", methods=['GET', 'POST'])
-# @login_required
-# def tour_full_4718():
-#     previous
-#     code = '4718'
-#     next_code = '3134'
-#     this_page = "/tour-full/" + code + ".html"
-#     next_page = "/tour-full/" + next_code + ".html" # 需要决定到底用哪个座位网址链接
-#     baseline = 'baseline_0' # 图片的ID（因为图片的区别是baseline不同所以用baseline来表示
-#     user = current_user
-#     picture =
-#     if request.method == 'GET':
-#         return render_template(this_page, path = )
-#     else:
-#         code = request.form.get("antenna_id")
-#         if code != code:
-#             flash("Wrong code!", "danger")
-#             return render_template(this_page)
-#         else:
-#             user_get_picture = Picture.query.filter(Picture.baseline==baseline).first()
-#             user.pictures.append(user_get_antenna)
-#             db.session.commit()
-#             return render_template(next_page)
+@app.route("/tour/full/final-314159")
+@login_required
+def tour_final():
+    return render_template("/tour/full/final-314159.html")

@@ -8,7 +8,8 @@
   <ul class="list-group">
   {# <iframe src="https://www.google.com/maps/d/embed?mid=1HVrJib4TFER3fcx4hiWZ11gtq4OTdL4R&ehbc=2E312F" width="300" height="480"></iframe> #}
   {% for antenna in antennas %}
-    <li class="list-group-item">{{antenna.name}}</li>
+    {% set pagelink = '/tour/full/' + antenna.name|string %}
+    <li class="list-group-item"><a href=“{{pagelink}}”>{{antenna.name}}</a></li>
   {% endfor %}
   </ul>
   </div>

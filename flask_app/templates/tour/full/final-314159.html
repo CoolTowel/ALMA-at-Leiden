@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h3>Congratulations!</h3>
+  <img src="{{ url_for('static', filename='images/drawing/final.svg') }}" class="img-fluid" alt="Student and professor looks at the starry sky.">
+
+  <p>You have completed this walking tour! Do you like the story and the view of Leiden city? The image you created shows the Whirlpool Galaxy, or Messier 51 - do you see the whirlpool shape? Although we can see it with the naked eye, we can also record the radio waves to learn more about the galaxy. This galaxy is 31 million light years from Earth and is about half the size of our own Milky Way.</p>
+  <img src="{{ url_for('static', filename='images/pictures/final.png') }}" class="img-fluid" alt="Oberved image"><p></p>
+  
+  <p>You visited 15 antennas to complete the image on the left. However, the quality could become even better if you use even more antennas that are spaced further apart. The image on the right is what the galaxy would look like if you could use 43 different antennas. Below, you can see what the galaxy looks like through a powerful telescope.</p>
+
+  Thank you for participating in this walking tour!
+
+  <img src="{{ url_for('static', filename='images/route.png') }}" class="img-fluid" alt="the whole route path"><p></p>
+
+{% endblock content %}

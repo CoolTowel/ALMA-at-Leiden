@@ -47,11 +47,15 @@
     ],
     "checkin_answer": "Round",
     "post_check": "This is a museum about Japan-related research in Leiden. Japanese astronomers also make use of ALMA: a true international collaboration!",
-    "astro_question": "(to be determined)",
+    "astro_question": "Which institutes work on the ALMA together? ",
     "astro_options": [
-      "answers"
+      "A and B",
+      "A and D",
+      "B and D",
+      "A, B, C",
+      "All of them"
     ],
-    "astro_answer": "answers"
+    "astro_answer": "All of them"
   },
   "4_Molen_de_Put": {
     "checkin_question": "From what year is the original windmill?",
@@ -82,7 +86,7 @@
     ],
     "checkin_answer": "Stadscafé Van der Werff",
     "post_check": "Step into the courtyard of this large museum to get a taste of what they offer.",
-    "astro_question": "Find the optimal interferometry settings in this website.",
+    "astro_question": "",
     "astro_options": [
       "Found it!"
     ],
@@ -119,10 +123,10 @@
     "post_check": "If the door is open, we recommend you step into the pretty courtyard and take a look!",
     "astro_question": "At the end of its lifetime, the sun will become a red giant. How large will its diameter be, compared to its current size?",
     "astro_options": [
-      "5x",
+      "2x",
+      "20x",
       "200x",
-      "10000x",
-      "1000000x"
+      "2000x"
     ],
     "astro_answer": "200x"
   },
@@ -154,7 +158,7 @@
       "A"
     ],
     "checkin_answer": "R",
-    "post_check": "This equation is Einstein's field equation: it describes how objects distort the space around them. This physics equation has proved to be very important in astronomy.Next to the equation, you will find Museum Boerhaave. This museum displays a large collection of scientific objects, including a significant collection of astronomy-related objects. It's definitely worth a visit on a rainy day!",
+    "post_check": "This equation is Einstein's field equation: it describes how objects distort the space around them. This physics equation has proved to be very important in astronomy. Next to the equation, you will find Museum Boerhaave. This museum displays a large collection of scientific objects, including a significant collection of astronomy-related objects. It's definitely worth a visit on a rainy day!",
     "astro_question": "Galileo Galilei was a famous astronomer. Which of the following discoveries did he make?",
     "astro_options": [
       "He invented the telescope.",
@@ -193,7 +197,7 @@
     ],
     "checkin_answer": "1314",
     "post_check": "One of Leiden's largest and oldest churches.",
-    "astro_question": "Play with constellations",
+    "astro_question": "Play with the constellations in the flyer.",
     "astro_options": [
       "Done!"
     ],
@@ -246,7 +250,7 @@
     ],
     "checkin_answer": "Door meten tot weten",
     "post_check": " In this building, Heike Kamerlingh Onnes first created liquid helium. The telescopes at ALMA actually need liquid helium to work!",
-    "astro_question": "follow the mysterious animal tracks",
+    "astro_question": "follow the mysterious animal tracks in the flyer.",
     "astro_options": [
       "Done!"
     ],
@@ -262,10 +266,14 @@
     ],
     "checkin_answer": "1",
     "post_check": "Nearly there!",
-    "astro_question": "(to be determined)",
+    "astro_question": "What galaxy did you find?",
     "astro_options": [
-      "answers"
+      "Andromeda",
+      "Milky Way",
+      "Pinwheel galaxy",
+      "Sombrero galaxy",
+      "Whirlpool galaxy"
     ],
-    "astro_answer": "answers"
+    "astro_answer": "Whirlpool galaxy"
   }
 }

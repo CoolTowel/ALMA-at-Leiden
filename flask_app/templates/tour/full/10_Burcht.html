@@ -9,6 +9,8 @@
     <p>&lsquo;Are you all right?&rsquo; Erica asks, concerned.</p>
     <p>&lsquo;Yes, it's just... quite tiring,&rsquo; Robin says.</p>
     <p>Erica sits down next to him. &lsquo;The air is thin up here. We're at 5000 metres altitude, so there's much less oxygen here. If you're not acclimatized, you run out of breath very quickly. Even I have trouble with it sometimes.&rsquo;</p>
+    <img src="{{ url_for('static', filename='images/drawing/10_Burcht.png') }}" class="img-fluid" alt="The alma antennas in leien"><p></p>
+
     <p>&lsquo;Why is ALMA here, anyway?&rsquo;</p>
     <p>&lsquo;You see...&rsquo; Robin hears little of Erica's explanation. He sees something dart behind the radio telescope. It's the second time already; it can't be a coincidence. Is it the lack of oxygen, or is something going on here?</p>
 
@@ -44,6 +46,7 @@
     {% endif %}
 
   {% else %}
+  <iframe src="https://www.komoot.com/tour/607160853/embed?share_token=az2lxM2xpJ2opAryGooWrt2beKY6RU9nVdMS6gmoan7mZAlVSX" width="100%" height="580" frameborder="0" scrolling="no"></iframe> 
     <form action="{{this_page}}" method="POST">
       <div class="form-group">
         <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>

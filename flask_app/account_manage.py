@@ -139,5 +139,6 @@ def account():
     for antenna in antennas:
         i += 1
     return render_template("account.html",
+                           antennas=antennas,
                            user_name=user_name,
                            antenna_number=i)

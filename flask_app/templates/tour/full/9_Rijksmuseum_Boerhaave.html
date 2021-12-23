@@ -6,6 +6,8 @@
   {% if checkin_status %}
     <p><i> {{post_check}} </i></p>
     <p>'Of course, it wasn't always like this,&rsquo; Jeremy continues as they walk to the next telescope. &lsquo;Long ago, we only had normal, optical telescopes. And before that, we only had our own eyes! For a long time, we thought the earth was the centre of the universe, and that the sun orbited us. Then scientists found out it was the other way around, that we orbited the sun. Then they discovered that the universe is so much bigger than we previously imagined. Our curiosity led us to great discoveries: billions upon billions of stars, each unique in their own way, some like the sun, some weird and wacky, some with planets...&rsquo; He talked for minutes on end, and Robin could do nothing other than nod.</p>
+    <img src="{{ url_for('static', filename='images/drawing/9_Rijksmuseum_Boerhaave.png') }}" class="img-fluid" alt="The alma antennas in leien"><p></p>
+
     <p>Erica whispers with a smile: &lsquo;He tends to ramble a lot. You can disagree with him if you want.&rsquo;</p>
     <p>&lsquo;I think he's right, though', Robin says. &lsquo;The universe&nbsp;<em>is&nbsp;</em>incredible.&rsquo;</p>
 
@@ -40,6 +42,7 @@
     {% endif %}
 
   {% else %}
+  <iframe src="https://www.komoot.com/tour/607160466/embed?share_token=ajww1K8mak5tW98vPY17tGSUSv56jB5g9QecmqriA5Kcxc5BL0" width="100%" height="580" frameborder="0" scrolling="no"></iframe> 
     <form action="{{this_page}}" method="POST">
       <div class="form-group">
         <label for="{{checkin_question}}"><b>Check: </b>{{checkin_question}}</label>
